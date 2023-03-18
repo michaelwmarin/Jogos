@@ -5,24 +5,19 @@ def jogar():
 
     lista_toda = []
 
-    with open('G:\Meu Drive\Alura\Portifolio\Jogos\lista_toda.txt','r') as arq:
+    with open('lista_toda.txt','r') as arq:
         conteudo = arq.readlines()
         p = random.randrange(0, 245366)
         lista_toda = (conteudo[p])
+        arq.close
     
     palavra_secreta = str(lista_toda).strip().upper()
-    letras_acertadas = []
+    letras_acertadas = ["_" for letra in palavra_secreta]
     letras_faladas = []
     acertou = False
     enforcou = False
     tamanho_palavra = len(palavra_secreta)
-    letras_acer = len(letras_acertadas)
     numero_tentativas = 0
-
-    for i in range(tamanho_palavra):
-        if(letras_acer < tamanho_palavra):
-            letras_acertadas.append("_")
-        continue
     
     print("\nQual nível de dificuldade?\n(1) Fácil (2) Médio (3) Difícil\n")
 
